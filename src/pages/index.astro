@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+const svgContent = readFileSync(resolve('./public/baggrund2.svg'), 'utf-8');
+
+
+const flyDuration = 18.5;
+const flyScale = 40.8; // 
+---
+
+<Layout title="Coded Design">
+
+<main class="flex items-center justify-center w-full min-h-screen overflow-hidden">
+  <div id="illustration" class="md:mt-10 md:w-[80%] xl:w-full">
+    <Fragment set:html={svgContent} />
+  </div>
+
+  <img
+    id="paperfly"
+    src="/fly.svg"
+    alt=""
+    class="paperfly"
+    style={`--fly-duration: ${flyDuration}s; --fly-scale: ${flyScale};`}
+  />
+
+  <div id="cursorLabel" class="cursor-label"></div>
+</main>
+
+</Layout>
+
+<style>
+  .paperfly {
+    position: fixed;
+    top: -30vh;
+    right: -30vw;
+    width: 30rem;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  .paperfly.animate {
+    opacity: 1;
+
+    transition:
+      transform var(--fly-duration) ease-in-out,
+      opacity 0.4s ease-in;
+    transform: translate(-150vw, 150vh);
+    
+  }
+
+  .cursor-label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: #d17326;
+    color: #f0ede8;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.875rem;
+    padding: 4px 10px;
+    opacity: 0;
+    transform: translate(-50%, -140%);
+    transition: opacity 0.15s ease;
+    z-index: 100;
+    white-space: nowrap;
+  }
+
+  .cursor-label.visible {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const svg = document.querySelector('#illustration svg') as HTMLElement;
+  if (svg) {
+    svg.removeAttribute('width');
+    svg.removeAttribute('height');
+    svg.style.display = 'block';
+    svg.style.margin = '0 auto';
+    svg.style.width = 'auto';
+    svg.style.height = '100vh';
+    svg.style.maxWidth = '100%';
+  }
+
+    // ✈️ Paperfly intro-animation — kun første gang i denne browser
+  const paperfly = document.querySelector('#paperfly') as HTMLElement;
+  if (paperfly) {
+    const STORAGE_KEY = 'paperfly-seen';
+
+    const hasSeenFly = localStorage.getItem(STORAGE_KEY);
+    // const hasSeenFly = false;
+
+    if (!hasSeenFly) {
+      setTimeout(() => {
+        paperfly.classList.add('animate');
+        localStorage.setItem(STORAGE_KEY, 'true');
+      }, 500);
+    } else {
+      paperfly.remove();
+    }
+  }
+
+  const links: Record<string, string> = {
+    Computer: '/cases',
+    kontaktplane: '/contact',
+    kontakt: '/contact',
+    ommigplane: '/about',
+    kerne: '/about',
+  };
+
+  // 🏷️ Labels der vises ved cursoren når man hover de forskellige elementer
+  const labels: Record<string, string> = {
+    Computer: 'Cases',
+    kontaktplane: 'Kontakt',
+    kontakt: 'Kontakt',
+    ommigplane: 'Om mig',
+    kerne: 'Om mig',
+  };
+
+  const cursorLabel = document.getElementById('cursorLabel') as HTMLElement;
+  let currentLabel: string | null = null;
+
+  document.addEventListener('mousemove', (e) => {
+    if (cursorLabel && currentLabel) {
+      cursorLabel.style.left = `${e.clientX}px`;
+      cursorLabel.style.top = `${e.clientY}px`;
+    }
+  });
+
+  const hoverColor = '#F47E1E';
+  const defaultColor = '#d17326';
+
+  const groups = [
+    {
+      triggers: ['kontaktplane', 'kontakt'],
+      targets: ['kontakt', 'platform1'],
+    },
+    {
+      triggers: ['ommigplane', 'kerne'],
+      targets: ['kerne', 'platform5'],
+    },
+    {
+      triggers: ['Computer'],
+      targets: ['Computer'],
+    },
+  ];
+
+  function collectEls(el: HTMLElement) {
+    const strokeEls: SVGElement[] = [];
+    const fillEls: SVGElement[] = [];
+    el.querySelectorAll('*').forEach((child) => {
+      const c = child as SVGElement;
+      const style = c.getAttribute('style') || '';
+      if (style.includes(`stroke:${defaultColor}`)) strokeEls.push(c);
+      if (style.includes(`fill:${defaultColor}`)) fillEls.push(c);
+    });
+    return { strokeEls, fillEls };
+  }
+
+  groups.forEach(group => {
+    const strokeEls: SVGElement[] = [];
+    const fillEls: SVGElement[] = [];
+
+    group.targets.forEach(targetId => {
+      const targetEl = document.getElementById(targetId) as HTMLElement;
+      if (!targetEl) return;
+      const { strokeEls: s, fillEls: f } = collectEls(targetEl);
+      strokeEls.push(...s);
+      fillEls.push(...f);
+    });
+
+    group.triggers.forEach(triggerId => {
+      const triggerEl = document.getElementById(triggerId) as HTMLElement;
+      if (!triggerEl) return;
+
+      
+      if (links[triggerId]) {
+      triggerEl.style.cursor = 'url(/pointerCursor3.svg) 0 0, pointer'; }
+
+      triggerEl.addEventListener('click', () => {
+        if (links[triggerId]) window.location.href = links[triggerId];
+      });
+
+      triggerEl.addEventListener('mouseenter', (e) => {
+        strokeEls.forEach(c => c.style.stroke = hoverColor);
+        fillEls.forEach(c => c.style.fill = hoverColor);
+
+        if (labels[triggerId] && cursorLabel) {
+          currentLabel = labels[triggerId];
+          cursorLabel.textContent = currentLabel;
+          cursorLabel.classList.add('visible');
+          cursorLabel.style.left = `${(e as MouseEvent).clientX}px`;
+          cursorLabel.style.top = `${(e as MouseEvent).clientY}px`;
+        }
+      });
+
+      triggerEl.addEventListener('mouseleave', () => {
+        strokeEls.forEach(c => c.style.stroke = defaultColor);
+        fillEls.forEach(c => c.style.fill = defaultColor);
+
+        if (labels[triggerId] && cursorLabel) {
+          currentLabel = null;
+          cursorLabel.classList.remove('visible');
+        }
+      });
+    });
+  });
+</script>

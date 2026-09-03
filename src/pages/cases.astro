@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+const casesSvg = readFileSync(resolve('./public/casesNew.svg'), 'utf-8');
+const casesMobilSvg = readFileSync(resolve('./public/mobilcasesNew.svg'), 'utf-8');
+---
+
+<Layout title="Cases">
+
+  <main class="cases-wrapper flex items-center justify-center w-full min-h-screen overflow-hidden">
+    <section class="sm:w-[70%] xl:w-[70%] 2xl:w-[60%] xl:mt-[10rem]">
+    
+    <!-- Desktop SVG – skjult på mobil -->
+    <div class="cases-svg-container w-full h-full [&>svg]:w-full [&>svg]:h-auto hidden md:block" set:html={casesSvg} />
+    </section>
+    <section class="w-[85%]">
+    <!-- Mobil SVG – skjult på desktop -->
+    <div class="cases-svg-container-mobil w-full h-full [&>svg]:w-full [&>svg]:h-auto block md:hidden" set:html={casesMobilSvg} />
+    </section>
+
+  </main>
+
+  <script>
+    const caseRoutes: Record<string, string> = {
+      'case1': '/aabencase',
+      'case2': '/iltsvindcase',
+      'case3': '/kolncase',
+      'case4': '/ditheadspace',
+      
+    };
+
+    Object.entries(caseRoutes).forEach(([caseId, route]) => {
+      const num = caseId.replace('case', '');
+
+      const groups = document.querySelectorAll(`#${caseId}`);
+      const innerCircles = document.querySelectorAll(`#innercircle${num}`);
+
+      groups.forEach((group, i) => {
+        const innerCircle = innerCircles[i];
+        if (!innerCircle) return;
+
+        const innerEllipse = innerCircle.querySelector('ellipse');
+        if (!innerEllipse) return;
+
+        const origRx = parseFloat(innerEllipse.getAttribute('rx') ?? '0');
+        const origRy = parseFloat(innerEllipse.getAttribute('ry') ?? '0');
+
+        innerEllipse.style.transition = 'rx 0.3s ease, ry 0.3s ease';
+
+        group.style.cursor = 'pointer';
+
+        group.addEventListener('click', () => {
+          window.location.href = route;
+        });
+
+        group.addEventListener('mouseenter', () => {
+          innerEllipse.style.rx = (origRx * 1.9) + 'px';
+          innerEllipse.style.ry = (origRy * 1.9) + 'px';
+        });
+
+        group.addEventListener('mouseleave', () => {
+          innerEllipse.style.rx = origRx + 'px';
+          innerEllipse.style.ry = origRy + 'px';
+        });
+      });
+    });
+  </script>
+
+</Layout>

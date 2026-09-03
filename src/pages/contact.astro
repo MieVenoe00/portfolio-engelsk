@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+const contactinfo = readFileSync(resolve('public/contactinfo.svg'), 'utf-8');
+const contactplatform = readFileSync(resolve('public/contactplatform.svg'), 'utf-8');
+---
+
+<Layout title="Kontakt mig">
+  <main class="flex flex-row items-center justify-center w-full min-h-screen ">
+    <section  class="flex flex-col-reverse items-center gap-0 lg:flex-row md:items-center justify-center w-[80%] h-full lg:gap-20 xl:gap-40">
+      <div set:html={contactplatform}  class="w-full"/>
+      <div set:html={contactinfo} class="w-full  mt-29 md:mt-38 lg:mt-18 xl:mt-38" />
+    </section>
+  </main>
+  <script>
+  document.getElementById('mailgroup').addEventListener('click', () => {
+    window.location.href = 'mailto:mie.venoe@outlook.com';
+  });
+
+  document.getElementById('mailgroup').style.cursor = 'pointer';
+
+  document.getElementById('linkedingroup').addEventListener('click', () => {
+  window.open('https://www.linkedin.com/in/mie-ven%C3%B8-skj%C3%A6rb%C3%A6k/', '_blank');
+});
+
+  document.getElementById('linkedingroup').style.cursor = 'pointer';
+
+
+  document.getElementById('phonegroup').addEventListener('click', () => {
+  const phone = '+4541984154';
+  
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    // Mobil: ring op
+    window.location.href = `tel:${phone}`;
+  } else {
+    // Desktop: kopier til clipboard
+    navigator.clipboard.writeText(phone).then(() => {
+      alert('Telefonnummer kopieret!');
+    });
+  }
+});
+document.getElementById('phonegroup').style.cursor = 'pointer';
+
+['mailgroup', 'linkedingroup', 'phonegroup'].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  // Fjern SVG transform-attribut og konverter til CSS
+  const svgTransform = el.getAttribute('transform');
+  const match = svgTransform?.match(/matrix\(([^)]+)\)/);
+  
+  if (match) {
+    el.style.transform = `matrix(${match[1]})`;
+    el.removeAttribute('transform');
+  }
+
+  el.style.cursor = 'pointer';
+  el.style.transformBox = 'fill-box';
+  el.style.transformOrigin = 'center center';
+  el.style.transition = 'transform 0.3s ease';
+
+  el.addEventListener('mouseenter', () => el.style.transform = `matrix(${match[1]}) scale(1.1)`);
+  el.addEventListener('mouseleave', () => el.style.transform = `matrix(${match[1]})`);
+});
+
+console.log(document.querySelector('.contactinfo svg')?.id);
+</script>
+</Layout>

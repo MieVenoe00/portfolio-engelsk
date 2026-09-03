@@ -1,0 +1,63 @@
+---
+import CaseLayout from "../layouts/CaseLayout.astro"
+import CaseIntro from "../components/CaseIntro.astro"
+import CaseGallari from "../components/CaseGallari.astro"
+import FlexComponents from "../components/FlexComponents.astro"
+import LinkKnap from "../components/LinkKnap.astro"
+
+import heroImg from "../assets/aabenbillederorange.webp";
+import pictureEt from "../assets/labelbillede1.webp";
+import pictureTo from "../assets/labelbillede2.webp";
+import generator from "../assets/aabengenerator.webp";
+
+---
+
+<CaseLayout title="ÅBEN Bryggeri">
+
+  <main class="flex flex-col items-center gap-20 lg:gap-30 mb-20  w-full min-h-screen ">
+    <section class="mt-[15rem] w-full flex items-center justify-center">
+      <CaseIntro >
+            <img slot="intropic" src={heroImg.src} alt="">
+            <h2 slot="introOverskrift" class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >ÅBEN Bryggeri Labelgenerator</h2>
+            <p slot="introtekst" class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> ÅBEN er et dansk craft brewery med et stort fokus på eksperimenterende øl og hyppige lanceringer, hvilket skaber et behov for hurtig og konsistent produktion af visuelt materiale. <br> <br>
+
+              I denne opgave designede og kodede jeg et generativt label-værktøj i p5.js, hvor øllens egne smagsnoter automatisk styrer farverne på etiketten gennem et datadrevet gradientsystem. <br>
+            </p>
+              <LinkKnap  href="https://aben-beer-label.netlify.app/">
+                Åben Labelgenerator
+              </LinkKnap></div>
+      
+    </CaseIntro> </section>
+  
+      <CaseGallari>
+        <img slot="picture1" src={pictureEt.src} />
+        <img slot="picture2" src={pictureTo.src} />
+    </CaseGallari>
+
+<FlexComponents>
+      <img slot="flexBillede" src={generator.src} />
+      <h2 slot="flexOverskrift" class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Label Generatoren</h2>
+      <p slot="flexTekst" class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> Generatoren skaber organiske, støjforvrængede former, mens designeren stadig har kreativ kontrol over komposition og rytme via intuitive sliders. <br>
+        Ølstilarten påvirker desuden automatisk tema, kontrast og blend modes, så designet tilpasser sig øllets karakter uden at miste ÅBENs visuelle identitet. <br><br>
+
+        Løsningen gør det muligt hurtigt at producere unikke labels til et konstant voksende katalog af øl, samtidig med at designprocessen forbliver konsistent og brugervenlig. 
+      </p>
+</FlexComponents>
+
+<div class="flex flex-col items-center content-center w-[80%] gap-4">
+  <p class="self-center text-sm xl:hidden">*Denne generator er lavet til desktop, da dette var kundens behov</p>
+  
+  <div class="w-full h-[50rem] overflow-hidden relative">
+    <iframe
+      title="Inline Frame Example"
+      class="absolute top-0 left-0"
+      style="transform: scale(0.7); transform-origin: top left; width: calc(100% / 0.7); height: calc(71.4rem);"
+      src="https://aben-beer-label.netlify.app/">
+    </iframe>
+  </div>
+</div>
+
+    
+
+  </main>
+</CaseLayout>

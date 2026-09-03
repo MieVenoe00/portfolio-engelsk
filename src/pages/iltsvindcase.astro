@@ -1,0 +1,113 @@
+---
+import CaseLayout from "../layouts/CaseLayout.astro"
+import CaseIntro from "../components/CaseIntro.astro"
+import CaseGallari from "../components/CaseGallari.astro"
+import FlexComponents from "../components/FlexComponents.astro"
+import LinkKnap from "../components/LinkKnap.astro"
+import FlexRev from "../components/FlexRev.astro"
+
+import heroImg from "../assets/IltsvindIntro.webp"; 
+import generator from "../assets/aabengenerator.png";
+import IltsvindResearch from "../assets/iltsvindResearch.webp"
+import IltsvindStil from "../assets/iltsvindStil.webp"
+import iltsvindgami from "../assets/iltsvindgami.webp"
+import formidling from "../assets/formidling.webp"
+import feedback from "../assets/feedback.webp"
+import iltsvindVideo from "../assets/Iltsvind.webm"
+
+---
+
+<CaseLayout title="Videnskab.dk Interaktiv Historie">
+
+  <main class="flex flex-col justify-center justify-items-center items-center gap-20 lg:gap-30 mb-20  w-full min-h-screen">
+
+    <!-- Start Video -->
+    <section class=" flex items-center mt-[15rem] w-[90%] sm:w-lg md:w-xl lg:w-[70%] xl:w-[60%] 2xl:w-[60%] 3xl:w-[60%] h-auto border-2 md:border-4 border-[#d17326]">
+      <video src={iltsvindVideo} class="w-full h-auto block" autoplay muted loop playsinline></video>
+    </section>
+    
+
+    <!-- Intro -->
+    <CaseIntro >
+      <img slot="intropic" src={heroImg.src} alt="">
+      <h2 slot="introOverskrift" class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Videnskab.dk Interaktiv Historie</h2>
+      <p slot="introtekst" class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> Videnskab.dk er en digital platform for videnskabelig information og uddannelse. <br> <br>
+
+        I denne opgave designede jeg en interaktiv historie om iltsvind i havet, som skal bruges i et særligt undervisningsforløb i faget Natur & Teknik om havet omkring Danmark.
+         <br>
+      </p>
+       
+      <h2 class="font-bold text-[#d17326] text-base sm:text-lg lg:text-md xl:text-lg 2xl:text-xl 3xl:text-2xl mt-15" >Målet</h2>
+      <p class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> <b>Eleverne skal efter at have gennemgået den interaktive historie have en grundlæggende forståelse for:</b> <br> <br>
+        Hvilke trusler har iltsvind på havets tilstand <br> Hvordan og hvorfor det sker iltsvind
+        <br>Hvilke konsekvenser har iltsvind for dyr, mennesker og planeten
+        <br>Hvad man selv (eller samfundet) kan gøre for at bekæmpe iltsvind</p>
+
+        <LinkKnap class="mb-[7rem]" href="https://videnskabdk-iltsvind.netlify.app/">
+            Prøv den interaktive historie
+          </LinkKnap>
+    
+    </CaseIntro>
+  
+<!-- Research -->
+<FlexRev>
+      <img slot="flexRevBillede" src={IltsvindResearch.src} />
+      <h2 slot="flexRevOverskrift" class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Research</h2>
+      <p slot="flexRevTekst" class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> 
+        Som en del af research processen dykkede jeg ned i hele iltsvind problematikken og det videnskablige bag. Jeg undersøgte hvilke spil målgruppen allerede spillede og jeg udarbejded en målgruppeanalyse for at forstå deres behov og præferencer bedre. <br> Hele research processen var essentiel for at kunne skabe en interaktiv historie, som både var videnskabeligt korrekt og engagerende for målgruppen. </h4>
+      </p>
+</FlexRev>
+
+<!-- Den visuelle stil -->
+<section class="flex flex-col lg:flex-row items-center justify-center gap-15 lg:gap-10 w-[80%] 3xl:w-[70%] overflow-hidden ">
+    <div class="w-[95%] sm:w-[70%]  lg:basis-[40%] 2xl:basis-[40%] 3xl:basis-[40%]">
+        <img src={IltsvindStil.src} alt="Den Visuelle Stil">
+    </div>
+    <div class="w-[95%] sm:w-[80%] lg:basis-[60%] 2xl:basis-[50%] 3xl:basis-[40%] ">
+        <h2 class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Den Visuelle Stil</h2>
+        <p class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl mt-6">Den visuelle stil er udviklet med fokus på at gøre komplekst fagligt indhold mere tilgængeligt for målgruppen ved at lade tekst og illustrationer understøtte det samme budskab.</p>
+
+        <h4 class="font-semibold mt-2 text-base sm:text-lg lg:text-md xl:text-lg 2xl:text-xl 3xl:text-2xl">Keywords: Troværdig, faglig, Inspirerende, universel</h4>
+
+        <h3 class="font-semibold text-base sm:text-lg lg:text-md xl:text-lg 2xl:text-xl 3xl:text-2xl mt-6">Typografi</h3>
+        <p class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl">Typografien Chaloops er valgt for dens bløde og uformelle udtryk, som understøtter projektets visuelle univers. Fonten gør det faglige indhold mindre tungt og mere tilgængeligt for målgruppen, samtidig med at den bidrager til en mere engagerende  brugeroplevelse.</p>
+         <h3 class="font-semibold text-base sm:text-lg lg:text-md xl:text-lg 2xl:text-xl 3xl:text-2xl mt-6">Farver</h3> 
+        <p class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl">Farvepaletten består primært af blå, turkise og brune nuancer inspireret af hav- og undervisningsmiljøer, hvilket skaber sammenhæng, genkendelighed og en troværdig naturfaglig stemning.</p>
+    </div>
+</section>
+
+<!-- Gamification sektion -->
+<section class="flex flex-col lg:flex-row-reverse items-center justify-center gap-15 lg:gap-10 w-[80%] 3xl:w-[70%] overflow-hidden ">
+    <div class="w-[95%] sm:w-[70%]  lg:basis-[40%] 2xl:basis-[40%] 3xl:basis-[40%]">
+        <img src={iltsvindgami.src} alt="">
+    </div>
+    <div class="w-[95%] sm:w-[80%] lg:basis-[60%] 2xl:basis-[50%] 3xl:basis-[40%] ">
+        <h2 class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Gamification</h2>
+        <p class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl">Projektet bruger gamification til at gøre læring om iltsvind mere engagerende for elever i 4-6. klasse. Gennem valg, konsekvenser og badges oplever brugeren fortællingen som en interaktiv mission, hvor handlinger påvirker havets tilstand. Det styrker både motivation, refleksion og forståelse af komplekse problemstillinger.
+        </p>
+    </div>
+</section>
+
+<!-- Formidling og Feedback sektion -->
+<section class=" h-auto  flex flex-col items-center gap-10 w-[80%] 3xl:w-[70%] overflow-hidden">
+   <div class=" w-[90%] sm:w-lg md:w-xl lg:w-[70%] xl:w-[60%] 2xl:w-[60%] 3xl:w-[60%] z-10">
+    <img src={formidling.src} alt="Formidling"> 
+  </div>
+  <div class=" w-[90%] sm:w-lg md:w-xl lg:w-[70%] xl:w-[60%] 2xl:w-[60%] 3xl:w-[60%] z-10">
+    <img src={feedback.src} alt="Feedback">
+  </div>
+</section>
+
+<div id="video" class="hidden 2xl:flex justify-center w-[80%] h-[42rem] mb-[25rem]">
+  <iframe
+    title="Iltsvind Interaktiv Historie embeded"
+     width="2320"
+    height="990"
+    src="https://videnskabdk-iltsvind.netlify.app/">
+  </iframe>
+</div>
+
+    
+
+  </main>
+</CaseLayout>

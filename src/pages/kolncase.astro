@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import kolnAnimation from '../data/kolnanimationshero.json';
+
+import CaseLayout from "../layouts/CaseLayout.astro"
+import CaseIntro from "../components/CaseIntro.astro"
+import CaseGallari from "../components/CaseGallari.astro"
+import FlexComponents from "../components/FlexComponents.astro"
+import LinkKnap from "../components/LinkKnap.astro"
+import FlexRev from "../components/FlexRev.astro"
+import heroImgkoln from "../assets/topkolnpics.webp";
+import kolnresearch  from "../assets/kolnmonster.webp"
+import monstercheet from "../assets/monsterCheet.png"
+import logostack from "../assets/logostack.jpg"
+import logostacksmall from "../assets/logostacksmall.jpg"
+import kolnendpics from "../assets/kolnbottompic.webp"
+---
+
+
+<CaseLayout title="Köln - Tyskland">
+
+  <main class="flex flex-col justify-center justify-items-center items-center gap-20 lg:gap-30 mb-20  w-full min-h-screen">
+
+    <!-- Start Video -->
+    <section class=" flex items-center mt-[15rem] w-[90%] sm:w-lg md:w-xl lg:w-[70%] xl:w-[60%] 2xl:w-[60%] 3xl:w-[60%] h-auto border-2 md:border-4 border-[#d17326]">
+      <div id="koln-hero-animation"></div>
+    </section>
+    
+
+    <!-- Intro -->
+    <CaseIntro>
+      <img slot="intropic" src={heroImgkoln.src} alt="">
+      <h2 slot="introOverskrift" class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Köln Dynamisk Visuel Identitet</h2>
+      <p slot="introtekst" class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> <b>Hvordan kan en bys identitet være i konstant bevægelse? </b> <br> <br>
+        I denne case udviklede jeg en dynamisk visuel identitet til Köln med udgangspunkt i kodning og generativt design. Opgaven tog afsæt i Köln´s ikoniske domkirke og alle dens mønstre, som blev omsat til et visuelt design system i deres logo og grafiske afsæt. En generator ville løbende kunne lave nye visuelle udtryk.
+      </p>
+  
+    </CaseIntro>
+  
+    <!-- Research -->
+    <section class="flex flex-col lg:flex-row-reverse items-center justify-center gap-15 lg:gap-10 w-[80%] 3xl:w-[70%] overflow-hidden ">
+    <div class="w-[60%] sm:w-[50%]  lg:basis-[18%] 2xl:basis-[15%] 3xl:basis-[22%]">
+        <img src={kolnresearch.src} />
+    </div>
+    <div class=" flex flex-col w-[95%] sm:w-[80%] lg:basis-[60%] 2xl:basis-[50%] 3xl:basis-[40%] ">
+        <h2 class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Mønsterbaseret design</h2>
+        <p  class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> 
+            Designsystemet tager udgangspunkt i geometriske mønstre fra Kölns domkirke og farvepaletten er inspireret af kirkens glasmosaikker. <br> <br>
+            Systemet er udviklet som grundlag for en generativ generator, hvor kodning kan skabe nye visuelle udtryk ud fra de samme designregler. <br> <br>
+            Konceptet viser, hvordan et regelsæt og kodning kan danne grundlag for en dynamisk visuel identitet, som kan udvikle sig og anvendes på tværs af branding og kommunikation på forskellige medier.
+          </p>
+          <div class=" flex justify-center w-full pt-10  ">
+            <img class="w-[95%] sm:w-[90%]  lg:basis-[90%] 2xl:w-[85%] 3xl:w-full" src={monstercheet.src} />
+        </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col  items-center justify-center gap-15 lg:gap-10 mt-10 w-[65%] 3xl:w-[65%]  overflow-hidden">
+    <div class="flex flex-col items-center w-auto" >
+      <img class=" border-2 md:border-4 border-[#d17326] w-full" src={logostack.src} />
+      <img class=" border-2 md:border-4 border-[#d17326] mt-8 w-[69%]" src={logostacksmall.src} />
+    </div>
+    <div class=" flex flex-col justify-center w-[95%] 3xl:w-[65%]  ">
+      <h2 class="font-bold text-[#d17326] text-base sm:text-lg lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl" >Logo Generator</h2>
+        <p  class="text-sm sm:text-base md:text-base lg:text-base xl:text-xl 2xl:text-xl 3xl:text-2xl"> 
+            Logo generatoren ville løbende kunne danne nye logoere hvor mønstrene i logoet ville ændre sig. Der ville være forskellige regler i algoritmen, som gør at to ens farver ikke skal være for tæt på hinanden og der er variation af cirkler og kvadater. <br> <br>
+            På sigt ville dette designsystem kunne opscaleres og der kan udvikles en generator hvor disse mønstre kan bruges på tværs af forskellige platforme og medier. 
+          </p>
+          <div class="relative w-full overflow-hidden mt-15 " style="height: 33rem;">
+            <iframe
+              title="Inline Frame Example"
+              class="absolute top-0 left-0"
+              style="width: 1400px; height: 1200px; transform: scale(0.7); transform-origin: top left;"
+              src="https://kolngenerator.netlify.app/">
+            </iframe>
+            
+          </div> 
+          <p class="text-xs text-mauve-400">*Lavet i samarbejde med calude</p>
+    </div>
+    <div class="w-[55%] 3xl:w-[50%] mt-20 ">
+        <img src={kolnendpics.src} />
+    </div>
+  </section>
+
+
+
+
+
+
+    
+
+  </main>
+</CaseLayout>
+
+<script>
+  import lottie from 'lottie-web';
+  import animationData from '../data/kolnanimationshero.json';
+
+
+  // Find asset med id "6"
+const asset6 = animationData.assets.find(a => a.id === '6');
+const layer0 = asset6.layers.find(l => l.ind === 0);
+
+// Fjern den shape-gruppe der har fill-farven [0.1, 0.09, 0.11, 1]
+layer0.shapes = layer0.shapes.filter(shape => {
+  const fill = shape.it?.find(item => item.ty === 'fl');
+  if (fill && fill.c.k[0] === 0.1 && fill.c.k[1] === 0.09 && fill.c.k[2] === 0.11) {
+    return false; // fjern denne gruppe
+  }
+  return true;
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('koln-hero-animation')!,
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  animationData: animationData
+});
+</script>

@@ -1,0 +1,18 @@
+To Do
+❏ UX på forsiden svg
+❏ Flere billeder på cases 
+❏ Evt. Videoer til cases
+❏ Flere cases
+❏ Ekspotere billeder til webP 
+❏ Minimere belastingen - mider fylde GB så den loader hurtigere
+❏ Flytte abilleder og andet content fra asset til public
+❏ Færdigøre about siden 
+❏ Link til om mig fra kontakt mig
+
+Nice To:
+❏ Animation på forsiden
+❏ Designe min egen mus 
+
+
+tom kasse ❏
+færdiggjort ◼ ✔ ✔️

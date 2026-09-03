@@ -1,0 +1,13 @@
+---
+---
+
+<section class="flex flex-col lg:flex-row items-center justify-center gap-15 lg:gap-10 w-[80%] 3xl:w-[70%]">
+    <div class=" w-[95%] sm:w-[70%]  lg:basis-[40%] 2xl:basis-[40%] 3xl:basis-[40%]">
+        <slot name="intropic"/>
+    </div>
+    <div class=" w-[95%] sm:w-[80%] lg:basis-[60%] 2xl:basis-[50%] 3xl:basis-[40%] ">
+        <slot class="text-[#d17326]" name="introOverskrift" />
+        <slot name="introtekst"/>
+        <slot/>
+    </div>
+</section>
