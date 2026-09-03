@@ -7,7 +7,7 @@ const contactinfo = readFileSync(resolve('public/contactinfo.svg'), 'utf-8');
 const contactplatform = readFileSync(resolve('public/contactplatform.svg'), 'utf-8');
 ---
 
-<Layout title="Kontakt mig">
+<Layout title="Contact me">
   <main class="flex flex-row items-center justify-center w-full min-h-screen ">
     <section  class="flex flex-col-reverse items-center gap-0 lg:flex-row md:items-center justify-center w-[80%] h-full lg:gap-20 xl:gap-40">
       <div set:html={contactplatform}  class="w-full"/>

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 2491 3570" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-34.890439,-100.332236)">
-        <g id="case4" transform="matrix(1,0,0,1,186.979617,2403.378291)">
+<svg width="100%" height="100%" viewBox="0 0 2030 4230" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-264.600323,-45.056849)">
+        <g id="case4" transform="matrix(1,0,0,1,-43.529982,3008.844585)">
             <g id="ditheadspaceCase.jpg" transform="matrix(0.833333,0,0,0.833333,892.524972,199.119432)">
                 <use xlink:href="#_Image1" x="0" y="0" width="1500px" height="844px"/>
                 <rect x="0" y="0" width="1500" height="844" style="fill:none;stroke:rgb(209,115,38);stroke-width:6px;"/>
             </g>
-            <g transform="matrix(0.87548,-0.505459,0.876534,0.506067,296.791381,-660.978394)">
+            <g transform="matrix(0.87548,-0.505459,0.876534,0.506067,296.791381,-661.978394)">
                 <rect x="-908.842" y="2152.374" width="415.994" height="668.675" style="fill:rgb(240,237,232);"/>
             </g>
-            <g id="platform4" transform="matrix(-0.449889,0,0,0.449889,2504.37562,311.602975)">
+            <g id="platform4" transform="matrix(-0.449889,0,0,0.449889,2504.37562,310.602975)">
                 <path d="M369.687,1656.216L1177.795,2122.777L2488.603,1365.982L2488.603,1277.468C2488.203,1276.689 2487.583,1276.026 2486.799,1275.574L1681.396,810.574C1679.963,809.747 1678.198,809.747 1676.765,810.574L370.076,1564.991C369.941,1565.069 369.811,1565.153 369.687,1565.242L369.687,1656.216ZM1679.08,819.931L2475.222,1279.584L1177.795,2028.654L381.652,1569.002L1679.08,819.931Z" style="fill:rgb(209,115,38);"/>
             </g>
-            <g transform="matrix(0.431705,0.249245,-0.431705,0.249245,1789.333508,944.294301)">
+            <g transform="matrix(0.431705,0.249245,-0.431705,0.249245,1789.333508,943.294301)">
                 <g transform="matrix(90,0,0,90,700.066993,150)">
                 </g>
                 <text x="213.988px" y="150px" style="font-family:'RobotoMono-Bold', 'Roboto Mono', monospace;font-weight:700;font-size:90px;fill:rgb(209,115,38);">headspace</text>
             </g>
-            <g transform="matrix(0.389615,0.224944,-0.389615,0.224944,1516.165536,846.106406)">
+            <g transform="matrix(0.389615,0.224944,-0.389615,0.224944,1516.165536,845.106406)">
                 <g transform="matrix(90,0,0,90,1348.172462,150)">
                 </g>
                 <text x="484.032px" y="150px" style="font-family:'RobotoMono-Regular', 'Roboto Mono', monospace;font-size:90px;fill:rgb(209,115,38);">Interactive Game</text>
             </g>
-            <g id="casebutton4" transform="matrix(1,0,0,1,0,-13)">
+            <g id="casebutton4" transform="matrix(1,0,0,1,0,-14)">
                 <g id="buttonplane4" transform="matrix(0.866025,-0.5,1,0.57735,38.971143,-22.5)">
                     <rect x="120" y="1922.576" width="120" height="103.923" style="fill:rgb(209,115,38);"/>
                 </g>
@@ -35,7 +35,7 @@
                 </g>
             </g>
         </g>
-        <g id="case3" transform="matrix(1,0,0,1,-251.318009,1890.253967)">
+        <g id="case3" transform="matrix(1,0,0,1,-21.608126,2270.365021)">
             <g id="Slide-16_9---13.webp" serif:id="Slide 16_9 - 13.webp" transform="matrix(0.833333,0,0,0.833333,481.741211,-94.524231)">
                 <use xlink:href="#_Image2" x="0" y="0" width="1500px" height="844px"/>
                 <rect x="0" y="0" width="1500" height="844" style="fill:none;stroke:rgb(209,115,38);stroke-width:6px;"/>
@@ -68,7 +68,7 @@
                 </g>
             </g>
         </g>
-        <g id="case2" transform="matrix(1,0,0,1,186.979617,789.572157)">
+        <g id="case2" transform="matrix(1,0,0,1,-43.529982,948.135188)">
             <g id="Group-60.webp" serif:id="Group 60.webp" transform="matrix(0.833333,0,0,0.833333,892.524972,181.619432)">
                 <use xlink:href="#_Image3" x="0" y="0" width="1500px" height="886px"/>
                 <rect x="0" y="0" width="1500" height="886" style="fill:none;stroke:rgb(209,115,38);stroke-width:6px;"/>
@@ -101,7 +101,7 @@
                 </g>
             </g>
         </g>
-        <g id="case1" transform="matrix(1,0,0,1,-251.667693,279.284925)">
+        <g id="case1" transform="matrix(1,0,0,1,-21.95781,224.009539)">
             <g id="IMG_7414.webp" transform="matrix(0.357143,0,0,0.357143,482.090895,-176.45269)">
                 <use xlink:href="#_Image4" x="0" y="0" width="3500px" height="2190px"/>
                 <rect x="0" y="0" width="3500" height="2190" style="fill:none;stroke:rgb(209,115,38);stroke-width:14px;"/>
